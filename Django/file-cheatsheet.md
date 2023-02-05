@@ -22,7 +22,8 @@ DATABASES = {
 ## urls.py
 ルーターの役割
 
-urlpatternsにパスを追加することでfront pageのviews.pyを呼び出す
+urlpatternsにパスを追加することでfrontpageのviews.pyを呼び出す
+
 デフォルトの`admin/`パスは管理画面に繋がってる←めっちゃ便利！
 ```
 urlpatterns = [
@@ -38,6 +39,23 @@ def my-frontpage(request):
     return render(request, 'home/frontpage.html', dict-fromDB)
 #renderのhtmlのpathはtemplateに対する相対パス
 ```
+
+## models.py
+DBの構造をここで指定する。gRPCのprotoとほとんど同じ。
+```
+python manage.py makemigrations
+```
+を実行すると`migrations/`直下にmigration履歴が残る。
+
+続いて
+```
+python manage.py migrate
+```
+を実行すれば設定した情報をDBとして使えるようになる。
+
+## admin.py
+管理画面でできることを設定できる。例えば`admin.site.register(Obj)`で対象オブジェクトについて要素を追加することができる。
+
 
 ## ***.htmlファイルの記述の補足
 `{{% Pythonのコード %}}`で記述する。

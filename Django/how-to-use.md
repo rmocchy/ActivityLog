@@ -41,4 +41,16 @@ python manage.py runserver
 ```
 # htmlファイルの作成
 templateフォルダをmy-app直下に作成してそこに記述する
+
+# 管理画面の設定
+```
+python manage.py createsuperuser
+```
+を実行して管理画面へアクセスするためのアカウントを作成する
+```
+ユーザー名:admin
+メールアドレス:admin@example.com
+password:password1234
+```
+同様にrunserverさせて`url+\admin`を入力することで管理画面にアクセスできる。
 各ファイルの役割については[こちら](./file-cheatsheet.md)
