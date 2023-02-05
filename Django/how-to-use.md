@@ -7,9 +7,12 @@ pip install virtualenv
 ```
 virtualenv my-env
 ```
-2.仮想環境に入ってpipインストール
+2.仮想環境に入ってアクティベートしてpipインストール
 ```
 cd my-env
+```
+```
+source bin/activate
 ```
 ```
 pip install django
@@ -18,8 +21,24 @@ pip install django
 ```
 django-admin --version
 ```
+以下で使えるモジュールを確認できる
+```
+pip freez
+```
 # 雛形作成
-3.djangoの雛形を作成する
+1.適当なライブラリでdjangoの雛形を作成する
 ```
 django-admin startproject my-project
 ```
+2.作成したプロジェクトに入ってアプリケーションを作成する
+```
+python manage.py startapp my-app
+```
+# 動作確認
+ローカルサーバーを起動してlocalhost上に表示できる
+```
+python manage.py runserver
+```
+# htmlファイルの作成
+templateフォルダをmy-app直下に作成してそこに記述する
+各ファイルの役割については[こちら](./file-cheatsheet.md)
